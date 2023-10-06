@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+{% comment %} <style>
+    .card {
+        background-image: url('your-background-image-url.jpg');
+        background-size: cover; /* You can adjust this property as needed */
+        /* Other background properties like background-position, background-repeat, etc., can be added here */
+    }
+</style> {% endcomment %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Select a Table</h2>
+    {% if available_tables %}
+        <ul class="list-group">
+            {% for table_number in available_tables %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <a class="h1 table-btn" href="#" data-table="{{ table_number }}">Table {{ table_number }}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">Oops...! All Tables are full</h2>
+          <h2 class="card-title">wait for 5mins...</h2>
+        </div>
+    </div>
+    {% endif %}
+</div>
+<script>
+    $(document).ready(function () {
+        $('.table-btn').click(function (event) {
+            event.preventDefault();
+    
+            var selectedTable = $(this).data('table');
+            console.log('Selected Table Number:', selectedTable);
+    
+            // Redirect to the menu page with the selected table number
+            window.location.href = '{% url "menu" %}?table=' + selectedTable;
+        });
+    });
+    
+</script>
+{% endblock content %}

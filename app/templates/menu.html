@@ -1,0 +1,131 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<header>
+	<!-- Jumbotron -->
+	<div class="p-3 pt-0 text-center bg-white border-bottom">
+	  <div class="container">
+		<div class="menu-button text-white py-1">
+			<a href="/" class="btn">Home</a>
+			<a href="{% url "tables" %}" class="btn">Tables</a>
+		</div>
+	<!-- Jumbotron -->
+	<div class="bg-secondary text-white py-3">
+	  <div class="container py-5">
+		<h1>
+		  DECAFF WITH <br />
+		 BEST Taste
+		</h1>
+		<h2 class="bg-warning">TABLE No: {{table_number}}</h2>
+	  </div>
+	</div>
+	<!-- Jumbotron -->
+</header>
+  <!-- Products -->
+<section>
+<div class="container my-5">
+	<header class="mb-4">
+	<h3>South Indians</h3>
+	</header>
+	<div class="row">
+	{% for i in south %}
+	<div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+		<div class="card w-100 my-2 shadow-2-strong">
+		<img src="{{ i.image.url }}" alt="{{ i.name }} class="card-img-top" style="aspect-ratio: 1 / 1" />
+		<div class="card-body d-flex flex-column">
+			<h5 class="card-title">{{i.name}}</h5>
+			<p class="card-text">{{i.price}}/- Rs</p>
+			<div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+			<a href="{% url 'addToCart' %}?dish_id={{ i.id }}&table={{ table_number }}" data-dish-id="{{ i.id }}"data-dish-name="{{ i.name }}"
+			class="btn btn-primary text-white shadow-0 me-1 addToCartButton"
+			> Add to cart </a>
+			</div>
+		</div>
+		</div>
+	</div>
+	{% endfor %}
+	</div>
+</div>
+<div class="container my-5">
+	<header class="mb-4">
+		<h3>Baverages</h3>
+	</header>
+
+	<div class="row">
+		{% for i in Baverages %}
+		<div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+		<div class="card w-100 my-2 shadow-2-strong">
+			<img src="{{ i.image.url }}" alt="{{ i.name }} class="card-img-top" style="aspect-ratio: 1 / 1" />
+			<div class="card-body d-flex flex-column">
+			<h5 class="card-title">{{i.name}}</h5>
+			<p class="card-text">{{i.price}}/- Rs</p>
+			<div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+				<a href="{% url 'addToCart' %}?dish_id={{ i.id }}&table={{ table_number }}" data-dish-id="{{ i.id }}"data-dish-name="{{ i.name }}"
+				class="btn btn-primary text-white shadow-0 me-1 addToCartButton"
+				> Add to cart </a>
+			</div>
+			</div>
+		</div>
+		</div>
+		{% endfor %}
+	</div>
+	</div>
+</section>
+<ul id="selected-items-list"></ul>
+<div class="menu-button text-white py-1">
+	<a href="{% url 'cart' %}?table={{ table_number }}" class="btn btn-primary">Go to Cart</a>
+</div>
+<script>
+	$(document).ready(function() {
+		// Initialize an empty array to store selected items
+		var selectedItems = [];
+	
+		// Function to add an item to the selected items list
+		function addToSelectedItems(dishId, dishName) {
+			selectedItems.push({ id: dishId, name: dishName });
+			updateSelectedItemsList();
+		}
+	
+		// Function to update the selected items list in the HTML
+		function updateSelectedItemsList() {
+			var selectedItemsList = $("#selected-items-list");
+			selectedItemsList.empty(); // Clear the existing list
+	
+			// Loop through selected items and append them to the list
+			selectedItems.forEach(function(item) {
+				var listItem = $("<li>").text(item.name);
+				selectedItemsList.append(listItem);
+			});
+		}
+	
+		// Add click event handler for "Add to cart" buttons
+		$(".addToCartButton").click(function(e) {
+			e.preventDefault(); // Prevent the default link behavior
+	
+			var dishId = $(this).data("dish-id");
+			var dishName = $(this).data("dish-name");
+			
+	
+			// Call the function to add the item to the selected items list
+			addToSelectedItems(dishId, dishName);
+	
+			// Extract dish_ids from selectedItems array
+			var dishIdsArray = selectedItems.map(function(item) {
+				return item.id;
+			});
+	
+			// Send an AJAX request to addToCart view with the selected dish_ids as an array
+			$.get(
+				"{% url 'addToCart' %}",
+				{ dish_ids: dishIdsArray, table: "{{ table_number }}" },
+				function(data) {
+					// Handle the response if needed
+				}
+			);
+		});
+	});
+	
+</script>
+ 
+
+{% endblock content %}

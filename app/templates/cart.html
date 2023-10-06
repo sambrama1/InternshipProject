@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="menu-button text-white">
+    <a href="{% url 'menu' %}" class="btn">Menu</a>
+    <a href="{% url 'cart' %}?table=1" class="btn">Table 1</a>
+    <a href="{% url 'cart' %}?table=2" class="btn">Table 2</a>
+    <a href="{% url 'cart' %}?table=6" class="btn">Table 6</a>
+</div>
+<div class="bg-secondary text-white py-3">
+	<div class="container">
+	  <h2 class="bg-warning">{{table_number}}</h2>
+	</div>
+  </div>
+<div class="shopping-cart section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- Shopping Summery -->
+				<table class="table shopping-summery">
+					<thead>
+						<tr class="main-hading">
+							<th>PRODUCT</th>
+							<th>NAME</th>
+							<th class="text-center">UNIT PRICE</th>
+							<th class="text-center">QUANTITY</th>
+							<th class="text-center">REMOVE</th> 
+							{% comment %} <th class="text-center"><i class="ti-trash remove-icon"></i></th> {% endcomment %}
+						</tr>
+					</thead>
+					<tbody>
+						{% for cart in carts  %} 		 
+						<tr>
+							<td class="image" data-title="No"><img class="default-img" src="{{cart.dishes.image.url}}" alt="#"></td>
+							<td class="product-des" data-title="Description">
+								<p class="dishes-name"><a href="#">{{cart.dishes.name}}</a></p>
+							</td>
+							<td class="price" data-title="Price"><span>{{cart.dishes.price}} Rs</span></td>
+							<td class="qty" data-title="Qty"><!-- Input Order -->
+								<div class="input-group">
+									<div class="button minus">
+										<button type="button" class="btn btn-primary btn-number minusCart" pid="{{cart.dishes.id}}" data-table="{{ table_number }}">
+											<i class="fa-solid fa-minus fa-sm"></i>
+										</button>
+									</div>
+									<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="{{cart.quantity}}">
+									<div class="button plus">
+										<button type="button" class="btn btn-primary btn-number plusCart" pid="{{cart.dishes.id}}" data-table="{{ table_number }}">
+											<i class="fa-solid fa-plus"></i>
+										</button>
+									</div>
+								</div>
+							</td>
+							<td class="action">
+								<button class="removeCart" pid="{{cart.dishes.id}}" data-table="{{ table_number }}">
+									<i class="fa-solid fa-xmark"></i>
+								</button>
+							</td>
+						</tr>
+						{% endfor %}
+						
+					</tbody>
+				</table>
+				<!--/ End Shopping Summery -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<!-- Total Amount -->
+				<div class="total-amount">
+					<div class="row">
+						<div class="col-lg-4 col-md-7 col-12">
+							<div class="right">
+								<ul>
+									<li id="amount">Cart Subtotal<span></span></li>
+									<li>Tax<span>{{tax}}</span></li>
+									<li class="last">You Pay<span>{{total}}</span></li>
+								</ul>
+								<div class="button5">
+									<a href="{% url "billpdf" %}?table={{ table_number }}" class="btn">order now</a>
+									<a href="{% url "menu" %}" class="btn">Continue to menu</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/ End Total Amount -->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+{% endblock content %}

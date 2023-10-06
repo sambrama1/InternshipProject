@@ -1,0 +1,6 @@
+
+    .card {
+        background-image: url('your-background-image-url.jpg');
+        background-size: cover; /* You can adjust this property as needed */
+        /* Other background properties like background-position, background-repeat, etc., can be added here */
+    }
