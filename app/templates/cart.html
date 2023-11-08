@@ -5,11 +5,12 @@
     <a href="{% url 'menu' %}" class="btn">Menu</a>
     <a href="{% url 'cart' %}?table=1" class="btn">Table 1</a>
     <a href="{% url 'cart' %}?table=2" class="btn">Table 2</a>
-    <a href="{% url 'cart' %}?table=6" class="btn">Table 6</a>
+    <a href="{% url 'cart' %}?table=3" class="btn">Table 3</a>
+    <a href="{% url 'cart' %}?table=4" class="btn">Table 4</a>
 </div>
 <div class="bg-secondary text-white py-3">
-	<div class="container">
-	  <h2 class="bg-warning">{{table_number}}</h2>
+	<div class="container ">
+	<h2 class="bg-warning">Table Number: - {{table_number}}</h2>
 	</div>
   </div>
 <div class="shopping-cart section">
@@ -72,14 +73,16 @@
 						<div class="col-lg-4 col-md-7 col-12">
 							<div class="right">
 								<ul>
-									<li id="amount">Cart Subtotal<span></span></li>
+									<li id="amount">Cart Subtotal<span>{{amount}}</span></li>
 									<li>Tax<span>{{tax}}</span></li>
 									<li class="last">You Pay<span>{{total}}</span></li>
 								</ul>
 								<div class="button5">
-									<a href="{% url "billpdf" %}?table={{ table_number }}" class="btn">order now</a>
-									<a href="{% url "menu" %}" class="btn">Continue to menu</a>
+									<a href="{% url "bill" %}?table={{ table_number }}" class="btn">Generate Bill</a>
 								</div>
+								<div class="button5">
+								<a href="{% url 'menu' %}?table={{ table_number }}" class="btn">Back to Menu</a>
+							</div>
 							</div>
 						</div>
 					</div>

@@ -9,6 +9,7 @@ urlpatterns = [
 
     path('register/',views.Register,name="Register"),
     path('login/',views.logn,name="login"),
+    path('logout/',views.log_out,name="logout"),
     path('tables/',views.select_table,name="tables"),
     path('menu/',views.menu,name="menu"),
     path('cart/',views.cart,name="cart"),
@@ -16,5 +17,5 @@ urlpatterns = [
     path('plusCart/', views.plusCart),
     path('minusCart/', views.minusCart),
     path('removeCart/', views.removeCart),
-    path('billpdf',views.bill,name="billpdf"),
+    path('billpdf',views.bill,name="bill"),
 ]

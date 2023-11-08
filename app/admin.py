@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(Dishes)
 admin.site.register(Cart)
 admin.site.register(Table)
+admin.site.register(Orderplaced)

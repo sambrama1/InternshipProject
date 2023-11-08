@@ -30,10 +30,7 @@ class Dishes(models.Model):
     image = models.ImageField(upload_to='images/')
     category = models.CharField(max_length=15, choices=CATEGORY_CHOICES, default='Baverages')
     description = models.CharField(max_length=255)
-
     
-
-
     def __str__(self):
         return self.name
     
@@ -55,13 +52,7 @@ class Cart(models.Model):
 
 
 class Orderplaced(models.Model):
-    STATUS_CHOICES = (
-    ('accepted','Accepted'),
-    ('served','Served'),
-    ('delivered','Delivered'),
-    )    
-
-    User = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     table = models.ForeignKey(Table, models.CASCADE)
     dishes = models.ForeignKey(Dishes,on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
@@ -69,7 +60,7 @@ class Orderplaced(models.Model):
     Ordered_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.dishes.name}--- quantity({self.quantity})----  TotalAmount({self.amount}))"
+        return f"{self.pk} ------ {self.dishes.name}--- quantity({self.quantity})"
 
 
      

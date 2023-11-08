@@ -2,27 +2,29 @@
 {% extends 'base.html' %}
 {% block content %}
 <header>
-	<!-- Jumbotron -->
+
 	<div class="p-3 pt-0 text-center bg-white border-bottom">
 	  <div class="container">
 		<div class="menu-button text-white py-1">
 			<a href="/" class="btn">Home</a>
 			<a href="{% url "tables" %}" class="btn">Tables</a>
 		</div>
-	<!-- Jumbotron -->
+
 	<div class="bg-secondary text-white py-3">
-	  <div class="container py-5">
+	  <div class="container py-3">
 		<h1>
 		  DECAFF WITH <br />
 		 BEST Taste
 		</h1>
 		<h2 class="bg-warning">TABLE No: {{table_number}}</h2>
+		<a href="{% url 'cart' %}?table={{ table_number }}" class="btn btn-primary mt-2">Go to Cart</a>
 	  </div>
 	</div>
-	<!-- Jumbotron -->
+	
 </header>
-  <!-- Products -->
+
 <section>
+<ul id="selected-items-list"></ul>
 <div class="container my-5">
 	<header class="mb-4">
 	<h3>South Indians</h3>
@@ -71,14 +73,10 @@
 	</div>
 	</div>
 </section>
-<ul id="selected-items-list"></ul>
-<div class="menu-button text-white py-1">
-	<a href="{% url 'cart' %}?table={{ table_number }}" class="btn btn-primary">Go to Cart</a>
-</div>
 <script>
 	$(document).ready(function() {
 		// Initialize an empty array to store selected items
-		var selectedItems = [];
+		var selectedIte ms = [];
 	
 		// Function to add an item to the selected items list
 		function addToSelectedItems(dishId, dishName) {
