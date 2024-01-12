@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wireframe </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin:40px 110px; }
+
+    .topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  border:1px solid black;
+  width:810px;
+  height:40px;
+}
+.topnav a {
+  
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-right:1px solid black;
+}
+
+
+.topnav a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.topnav-right {
+  float: right;
+  border-left:1px solid black;
+  background-color: darkgrey;
+
+}
+.layout-2{
+  display:flex;
+  
+}
+.screen {
+      width: 580px;
+      height: 220px;
+      border: 1px double black;
+      background-color: white;
+      margin:10px ;
+      margin-left: 2px;
+      float:left;
+      overflow:scroll;
+      overflow-x:hidden;
+
+    }
+    .screen input[type="radio"] {
+      display:inline;
+      text-align: center;
+    
+    }
+     .screen-2 {
+      width: 530px;
+      border: 1px solid black;
+      height:180px;
+      margin:10px;
+    }
+.login-box {
+
+  border: 1px solid black;
+  margin: 10px -6px;
+  width:220px;
+  height:220px;
+  overflow:scroll;
+  overflow-x:hidden;
+  
+}
+.login-box h3 {
+  border:1px solid white;
+  background-color: darkgrey;
+  margin:0px;
+  
+}
+.login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 60%;
+      height: 1px;
+      padding: 8px;
+      margin: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .login-box input[type="log in "] {
+      width: 30%;
+      padding: 8px;
+      background-color: #7b7e7b;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      float: center;
+      margin-left: 60px;
+      text-align: center;
+      height:1px;
+    }
+    p {
+      text-align: center;
+      margin-top: 10px;}
+
+      .signup-button {
+      width: 30%;
+      padding: 8px;
+      background-color: #7b7e7b;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-left:60px;
+      text-align: center;
+      height:1px;
+    }
+    .ad-space{
+      border:1px solid black;
+      width:230px;
+      height:361px;
+      overflow:scroll;
+      overflow-x:hidden;
+      margin-left: 380px;
+      margin-top:-210px;
+    }
+    .ad-space h4{
+      background-color: #7b7e7b;
+      margin-top:1px;
+    }
+
+    .layout-3{
+      display:flex;
+    }
+    .statistics{
+      width: 190px;
+      background-color:white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid #000000;
+      height:200px;
+      overflow:scroll;
+      overflow-x:hidden;
+    }
+    .statistics h2 {
+      margin: 0px;
+      border:1px solid white;
+      background-color: #7b7e7b;
+    }
+    ul{
+      list-style-type: none;
+      margin-left:-30px;
+    }
+    .featured-tests {
+      width: 370px;
+      background-color:white;
+      border: 1px solid #000000;
+      margin:0px;
+      margin-left:10px;
+      height:25px;
+      font-size:14px;
+    }
+    .featured-tests h2{
+     text-align: left;
+     margin:0px;
+    }
+  
+    .plants{
+      width: 370px;
+      background-color:white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid #000000;
+      height:165px; 
+      overflow:scroll;
+      overflow-x:hidden;
+      margin: 10px 1px
+
+    }
+    .plants h2{
+      margin: 0px;
+      border:1px solid white;
+      background-color: #7b7e7b;
+    }
+    
+    .Popular-tests {
+    background-color:white;
+    width: 190px;
+    margin-top:-10px
+      
+    }
+    .Popular-tests h2 {
+      font-size: 20px;
+      background-color: white;
+      border:1px solid black;
+      width:190px;
+    }
+
+      .mughal{
+        border: 1px solid black;
+        width:190px;
+        background-color:white;
+        margin-top: -15px;
+        overflow:scroll;
+      overflow-x:hidden;
+      
+
+      }
+      .mughal h2{
+        background-color: #7b7e7b;
+        font-size: small;
+        margin:0px
+      }
+
+    .recomended-tests{
+      width: 370px;
+      background-color:white;
+      border: 1px solid #000000;
+      margin-top:-155px;
+      height:21px;
+    }
+    .recomended-tests h2{
+      text-align: center;
+    }
+    .mughal-2{
+      width: 370px;
+      background-color:white;
+      border: 1px solid #000000;
+      margin-top:4px;
+      height:130px;
+      overflow:scroll;
+      overflow-x:hidden;
+
+    }
+    .mughal-2 h2{
+        background-color: #7b7e7b;
+        font-size: small;
+        margin:0px}
+      
+</style>
+</head>
+
+<body>
+<!-- Top navigation -->
+<div>
+<div class="topnav">
+    <!-- Left-aligned links (default) -->
+    <a href="#Clock time">clock time</a>
+    <!-- Right-aligned links -->
+    <div class="topnav-right">
+      <a href="#search">Search</a>
+      <a href="#login">Login</a>
+    </div>
+     </div>
+      <div class="layout-2">
+    <div class="screen">
+       <div class="screen-2">
+      </div>
+      <input type="radio" name="gender" style="margin-left: 200px;">
+      <input type="radio" name="gender">
+      <input type="radio" name="gender">
+      <input type="radio" name="gender" checked="checked"> 
+    </div>
+    <div class="login-box">
+        <h3>Login</h3>
+        <form>
+          <input type="text" placeholder="User ID" required>
+          <input type="password" placeholder="*********" required>
+          <input type="log in " value="Login">
+          <p>"or"</p>
+          <input class="signup-button" value="signup">
+          <p>"for free!"</p>
+        </form>
+        </div>
+       
+   </div>
+    <div class="layout-3">
+    <div class="statistics">
+      <h2>Statistics</h2>
+      <ul class="stat-list">
+        <li>12345 user</li>
+        <li>200000</li>
+        <li>40000 tests taken</li>
+        <li>1700 Topics</li>
+        <li>200 subjects</li>
+        <li>(similar stats)</li>
+      </ul>
+      <div style="margin-left: 140px; margin-top:-120px;"> <p style ="width:20px ; height: 20px;border-radius:50px;background-color: blue"> 1</p>
+        <p style ="width:20px ; height: 20px;border-radius:50px; background-color: blue; margin-top:-20px;border: 1px solid black;"> 1 </p>
+        <p style ="width:20px ; height: 20px;border-radius:50px;background-color: blue; margin-top:-20px;border: 1px solid black;"> 1</p>
+        <p style ="width:20px ; height: 20px;border-radius:50px;background-color: blue;margin-top:-20px;border: 1px solid black;"> 1</p>
+        <p style ="width:20px ; height: 20px;border-radius:50px; background-color: blue; margin-top:-20px;border: 1px solid black;"> 1</p>
+        <p style ="width:20px ; height: 20px;border-radius:50px; background-color: blue;margin-top:-20px;border: 1px solid black;"> 1</p>
+      </div>
+    </div>
+    <div class="featured-tests">
+        <h2>Featured Tests</h2>
+        <div class="plants">
+          <h2> plants and herbs-Biology Class VI</h2>
+          <ul class="plants-list">
+          <li>herbs and plants-Biology Class VI</li>
+            <li> plants and herbs-Biology Class VI</li>
+            <li>plants and herbs-Biology Class VI</li>
+            </ul>
+        </div>
+        <div class="ad-space">
+          <h4> AD SPACE</h4>
+        <p>
+
+
+
+
+
+
+
+
+
+
+
+       </p>
+        </div>
+        <div class="recomended-tests">
+          <h2> Recomended tests</h2>
+        </div>
+        <div class="mughal-2">
+          <h2> The Mughal empire</h2><div>
+          <p style ="width:15px ; height: 15px;border-radius:30px; background-color: blue; margin-top:-29px; display:inline-flex;border: 1px solid black;"> 1 </p>
+          <p style ="width:15px ; height: 15px;border-radius:30px; background-color: blue; margin-top:-10px;display:inline-flex;border: 1px solid black;"> 1 </p>
+          <p style ="width:15px ; height: 15px;border-radius:30px; background-color: blue; margin-top:-10px;display:inline-flex;border: 1px solid black;"> 1 </p><br>
+           plants and herbs<br>
+           <p style ="width:15px ; height: 15px;border-radius:30px; background-color: blue; margin-top:-10px;display:inline-flex;border: 1px solid black;"> 1 </p>
+          <p style ="width:15px ; height: 15px;border-radius:30px; background-color: blue; margin-top:-13px;display:inline-flex;border: 1px solid black;"> 1 </p>
+          <p style ="width:15px ; height: 15px;border-radius:30px; background-color: blue; margin-top:-10px;display:inline-flex;border: 1px solid black;"> 1 </p><br>
+           Herbs and plants<br>
+           <p style ="width:15px ; height: 15px;border-radius:30px; background-color: blue; margin-top:-10px;display:inline-flex;border: 1px solid black;"> 1 </p>
+           <p style ="width:15px ; height: 15px;border-radius:30px; background-color: blue; margin-top:-10px;display:inline-flex;border: 1px solid black;"> 1 </p>
+           <p style ="width:15px ; height: 15px;border-radius:30px; background-color: blue; margin-top:-10px;display:inline-flex;border: 1px solid black;"> 1 </p><br></p>
+           </div>
+        </div>
+      </div>
+     </div>
+<div class="layout-4">
+      <div class="Popular-tests">
+        <h2> popular tests</h2>
+      </div>
+      <div class="mughal" style="height: 18vmin;">
+        <h2> The Mughal empire</h2>
+        <p style="border: 1px solid black; ">|||||||||||||||||||||||||||
+        </p><li style="list-style-type: none;padding-top:0px;">Plants and herbal</li>
+      <p style="border: 1px solid black;margin-top: 0px;">||||||||||||||||||||||||||
+        </p><li style="list-style-type: none;margin-top: 0px;">Hesrbal and plants</li>
+      <p style="border: 1px solid black;margin-top: 0px;">|||||||||||||||||||||||||
+    </p>
+      </div>
+      </div>
+    </div>
+</head>
+</body>

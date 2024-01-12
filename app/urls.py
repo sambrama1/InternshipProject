@@ -18,4 +18,5 @@ urlpatterns = [
     path('minusCart/', views.minusCart),
     path('removeCart/', views.removeCart),
     path('billpdf',views.bill,name="bill"),
+    path('dopdf/',views.generate_pdf,name="dopdf"),
 ]

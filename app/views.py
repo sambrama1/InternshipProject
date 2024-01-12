@@ -10,6 +10,8 @@ from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from copy import deepcopy
+from xhtml2pdf import pisa
+# from pyhtml2pdf import converter
 
 def Register(request):
     if request.method == "POST":
@@ -25,6 +27,7 @@ def Register(request):
             my_user.save()
             return redirect('menu')
     return render(request,'register.html')
+
 
 
 def logn(request):
@@ -308,3 +311,28 @@ def bill(request):
     else:
         return redirect('login')
 
+
+
+def render_to_pdf(template_path, context_dict):
+    template = render(None, template_path, context_dict)
+    response = HttpResponse(content_type='application/pdf')
+    response['content-Disposition'] = 'attachment; filename = "newDo.pdf"'
+
+    pisa_status = pisa.CreatePDF(
+        template.getvalue(),
+        dest = response
+    )
+
+    if pisa_status.err:
+        return HttpResponse('ahhkhkhskjhajsjshajsjsh')
+    
+    return response
+
+def generate_pdf(request):
+    template_path = 'newDo.html'
+
+    context = {
+        # snjhjqw
+    }
+    
+    return render_to_pdf(template_path, context)

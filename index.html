@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="https:/kit.fontawesome.com/61821db167.js" crossorigin="anonymous"></script>
+
+  <title>menu</title>
+  <style>
+    body {
+      margin: 0 25%;
+    }
+
+    .rectangle {
+      width: 500px;
+      height: 400px;
+      background-color: white;
+      border: 1px dotted black;
+      flex-direction: column;
+
+
+    }
+
+    .right-div {
+      background-color: rgb(169, 61, 61);
+      width: 500px;
+      margin-top: 0px;
+      height: 560px;
+      /* text-align: left; */
+    }
+
+    .left-div {
+      background-color: rgb(158, 52, 52);
+      width: 150px;
+      margin-top: 0px;
+      height: 560px;
+    }
+
+    .icons {
+      margin-top: 0px;
+      border-width: medium;
+      height: 50px;
+      background-color: rgb(131, 85, 45);
+      border-bottom: 1px dashed rgb(195, 200, 178);
+
+
+
+    }
+
+    .layout {
+      display: flex;
+      margin-left: 0;
+
+    }
+
+    .vertical-line {
+      border-left: 1px dashed rgb(8, 8, 8);
+      height: 200px;
+      height: 500px;
+    }
+
+    .ul {
+      text-align: left;
+      /* Removes the default bullet points */
+    }
+
+    li::after {
+      content: "";
+      display: block;
+      border-bottom: 1px #000;
+      margin-top: 8px;
+      list-style-type: none;
+      color: white;
+
+    }
+
+    .select {
+      background-color: brown;
+      margin: 10px;
+      width: auto;
+      height: auto;
+    }
+
+
+
+    .bottom {
+      height: 50px;
+      background-image: url('./photos/img4.jpeg');
+      width: 90px;
+    }
+
+    .btm-img {
+      height: 110px;
+      /* background-image: linear-gradient(transparent, rgba(145, 74, 74, 0.77) 15%); */
+      position: relative;
+      width: 500px;
+      top: -180px;
+    }
+
+
+
+    .btm-img p {
+      display: flex;
+      position: relative;
+      top: 74px;
+      left: 230px;
+      z-index: 2;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .btm-img1 {
+      height: 90px;
+      /* background-image: linear-gradient( transparent, rgba(173, 86, 86, 0.99) 15%); */
+      position: relative;
+      top: -10px;
+      width: 80px;
+      margin-left: 200px;
+
+    }
+
+    .btm-img2 {
+      position: relative;
+      width: 80px;
+      height: 30px;
+      top: -10px;
+      float: right;
+      margin-right: 10px;
+
+    }
+
+    .footer {
+      border: 1px solid balck;
+      width: 500px;
+      height: 40px;
+      margin: -180px 0px;
+      background-color: burlywood;
+
+    }
+
+    .left-div-li-2 {
+      color: white;
+      list-style-type: none;
+    }
+  </style>
+
+<body>
+  <!-- Top navigation -->
+  <div>
+    <div class="rectangle">
+      <div class="icons">
+        </h1>
+        <i class="fa-solid fa-star fa-pull-left" style="font-size:28px; margin:4px 30px;"></i>
+        <i class="fa-solid fa-utensils fa-pull-center" style="font-size:28px; margin:6px ; color: rgb(170, 80, 80);"></i>
+        <i class="fa-solid fa-wine-glass fa-pull-center" style="font-size:28px; margin:6px 70px;"></i>
+        <i class="fa-solid fa-magnifying-glass fa pull-right"
+          style="font-size:28px; margin-right:10px; margin-top:10px;"></i>
+      </div>
+      <div class="layout">
+        <ul class="left-div">
+          <li style="list-style-type: none;color:white;margin-left: -35px; margin-top: 4px;">Thali Item</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-6px;width: 190px;margin-left:-40px;"><li class="left-div-li-2" style="margin-left:-39px;background-color: rgb(134, 15, 39);padding: 8px;margin-top: -5px;"> Chicken(dry)</li>
+          <hr style="color:white;opacity:0.1;margin-top:-7px;width: 190px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -40px; padding: 4px;margin-top:7px ;">Chicken(Gravy i)</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-11px;width: 190px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -35px;padding: 0px;">Tandoori items</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-11px;width: 190px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -35px;">Mutton(Dry)</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-11px;width: 190px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -35px;">Mutton(Gravy)</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-11px;width: 190px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -35px;">Biryani Rice</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-11px;width: 190px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -35px;">Fried Rice</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-11px;width: 190px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -35px;">Soup</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-11px;width: 190px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -35px;">Noodles</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-11px;width: 190px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -35px;">Eggs</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-11px;width: 190px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -35px;opacity: 0.2;">Fish(dry)</li><br>
+        </ul>
+
+        
+
+        <ul class="right-div">
+          <li style="list-style-type: none;color:white;margin-left: -20px; margin-top: 15px;">Empire chicken Kebab</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-4px;width: 300px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -20px;margin-top: 7px"> Chicken Manchurian</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-4px;width: 300px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -20px;margin-top: 7px"> Chilli Chicken</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-4px;width: 300px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -20px;"> Chillu Lollypop</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-4px;width: 300px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -20px;"> Chilly 65</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-4px;width: 300px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -20px;"> Pepper Chicken</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-4px;width: 300px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -20px;">Chicken Lemon</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-4px;width: 300px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -20px;">Garlic Chicken</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-4px;width: 300px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -20px;"> chicken Tomato Fry</li><br>
+          <hr style="color:white;opacity:0.1;margin-top:-4px;width: 300px;margin-left:-40px;"><li style="list-style-type: none;color:white;margin-left: -20px;opacity: 0.2;"> chicken keema</li>
+        </ul>
+      </div>
+      <div class="bottom"></div>
+      <div class="btm-img">
+        <p style="font-size: 25px;margin-top:5px;">6</p>
+        <img class="btm-img1" src="c:\Users\laksh\Downloads\circle.png" alt="table-circle">
+        <img class="btm-img2" src="c:\Users\laksh\OneDrive\Desktop\done.png" alt="table-circle"
+          style="margin-top: 30px;">
+               
+      </div>
+
+      <div class="footer"></div>
+
+    </div>
+
+
+
+  </div>
+  </div>
+  </div>
+
+</body>
+</head>
